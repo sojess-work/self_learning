@@ -1,14 +1,14 @@
-package arrays;
+//https://leetcode.com/problems/check-if-the-sentence-is-pangram/
 
-public class Panagram {
-    public static void main(String[] args) {
-        String sentance = "thequickbrownfoxjumpsoverthelazydog";
+class Solution {
+    public boolean checkIfPangram(String sentence) {
         for(char ch = 'a';ch<='z';ch++){
-            if (sentance.indexOf(ch)<0){
-                System.out.println("False");
-                break;
+            
+            //indexOf funtion returns a negative value if given parameter is not found
+            if (sentence.indexOf(ch)<0){
+                return false;
             }
         }
-        System.out.println("true");
+       return true; 
     }
 }
