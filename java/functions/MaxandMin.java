@@ -1,3 +1,6 @@
+
+//find the maximum and minimum between three numbers
+
 package functions;
 
 import java.util.Scanner;
