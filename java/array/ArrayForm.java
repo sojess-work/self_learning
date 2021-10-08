@@ -1,19 +1,22 @@
-package arrays;
+//  https://leetcode.com/problems/add-to-array-form-of-integer/
 
-import java.util.ArrayList;
 
-public class ArrayForm {
-    public static void main(String[] args) {
-        int[] num={9,9,9,9,9,9,9,9,9};
-        int k =1;
+
+class Solution {
+    public List<Integer> addToArrayForm(int[] num, int k) {
+     
+        //converting the given array form to a number
+        //calling the created function arrayToInt, adding it with k and storing it in the number variable
         int number= arrayToInt(num)+k;
-        System.out.println(number);
         ArrayList<Integer> list = new ArrayList<>();
+        
+        //converting the number into an array form
         while(number!=0){
             list.add(number%10);
             number/=10;
         }
-        System.out.println(list);
+        
+        //Since it is reversed we need to reverse it again
         int start=0,end=list.size()-1;
         while(start<end){
             int temp=0;
@@ -23,10 +26,12 @@ public class ArrayForm {
             start++;
             end--;
         }
-        System.out.println(list);
 
+      return list;  
     }
-    public static int arrayToInt(int[] array){
+    
+    //function to convert array form into an integer
+    public int arrayToInt(int[] array){
         int number=0;
         for(int digit : array){
             number=number*10+digit;
